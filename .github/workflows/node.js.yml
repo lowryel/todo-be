@@ -57,7 +57,7 @@ jobs:
                   chmod 600 ~/.ssh/ec2.pem
 
                   ssh-keyscan -H "$PUBLIC_IP" >> ~/.ssh/known_hosts
-
+            # ssh in to the server
             - name: Configure Ansible Inventory
               env:
                   PUBLIC_IP: ${{ steps.ec2.outputs.public_ip }}
