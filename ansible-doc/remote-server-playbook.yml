@@ -1,0 +1,6 @@
+- name: Ansible sample playbook for setting up a remote server
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+  roles:
+    - server

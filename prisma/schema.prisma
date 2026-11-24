@@ -1,0 +1,22 @@
+// Prisma schema for the Todo API.
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Todo {
+  id        String   @id @default(uuid())
+  title     String   @db.VarChar(160)
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([completed, createdAt])
+}
