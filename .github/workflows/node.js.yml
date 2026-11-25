@@ -71,6 +71,6 @@ jobs:
                   EOF
 
             - name: Run Ansible Playbook
-              working-directory: ansible
+              working-directory: todo-be
               run: |
-                  ansible-playbook ansible-doc/remote-server-playbook.yml
+                  ansible-playbook ./ansible-doc/remote-server-playbook.yml
