@@ -21,3 +21,16 @@
     name: nginx
     state: started
     enabled: yes
+
+- name: edit index.html
+  ansible.builtin.copy:
+    dest: /var/www/html/index.html
+    content: "<h1>Welcome to the server setup!</h1>"
+    owner: www-data
+    group: www-data
+    mode: "0644"
+
+- name: Restart Nginx to apply changes
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
