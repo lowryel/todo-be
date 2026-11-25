@@ -24,7 +24,7 @@
 
 - name: edit index.html
   ansible.builtin.copy:
-    dest: /var/www/html/index.html
+    dest: /usr/share/nginx/html/index.html
     content: "<h1>Welcome to the server setup!</h1>"
     owner: www-data
     group: www-data
